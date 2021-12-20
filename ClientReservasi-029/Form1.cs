@@ -24,13 +24,13 @@ namespace ClientReservasi_029
 
         private void btSimpan_Click(object sender, EventArgs e)
         {
-            string idPemesanan = textBoxID.Text;
-            string namaCust = textBoxNama.Text;
-            string noTelp = textBoxNoTlf.Text;
-            int jmlPemesanan = int.Parse(textBoxJumlah.Text);
-            string idLokasi = textBoxIDLokasi.Text;
+            string IDPemesanan = textBoxID.Text;
+            string NamaCustomer = textBoxNama.Text;
+            string NoTelpon = textBoxNoTlf.Text;
+            int JumlahPemesanan = int.Parse(textBoxJumlah.Text);
+            string IdLokasi = textBoxIDLokasi.Text;
 
-            var a = service.pemesanan (idPemesanan, namaCust, noTelp, jmlPemesanan, idLokasi);
+            var a = service.pemesanan(IDPemesanan, NamaCustomer, NoTelpon, JumlahPemesanan, IdLokasi);
             MessageBox.Show(a);
             TampilData();
             Clear();
@@ -38,11 +38,11 @@ namespace ClientReservasi_029
 
         private void btUpdate_Click(object sender, EventArgs e)
         {
-            string idPemesanan = textBoxID.Text;
-            string namaCust = textBoxNama.Text;
-            string noTelp = textBoxNoTlf.Text;
+            string IDPemesanan = textBoxID.Text;
+            string NamaCustomer = textBoxNama.Text;
+            string NoTelpon = textBoxNoTlf.Text;
 
-            var a = service.editPemesanan(idPemesanan, namaCust, noTelp);
+            var a = service.editPemesanan(IDPemesanan, NamaCustomer, NoTelpon);
             MessageBox.Show(a);
             TampilData();
             Clear();
@@ -50,9 +50,9 @@ namespace ClientReservasi_029
 
         private void btHapus_Click(object sender, EventArgs e)
         {
-            string idPemesanan = textBoxID.Text;
+            string IDPemesanan = textBoxID.Text;
 
-            var a = service.deletePemesanan(idPemesanan);
+            var a = service.deletePemesanan(IDPemesanan);
             MessageBox.Show(a);
             TampilData();
             Clear();
@@ -89,11 +89,11 @@ namespace ClientReservasi_029
 
         private void dtPemesanan_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            textBoxID.Text = Convert.ToString(dtPemesanan.Rows[e.RowIndex].Cells["idPemesanan"].Value);
-            textBoxNama.Text = Convert.ToString(dtPemesanan.Rows[e.RowIndex].Cells["namaCustomer"].Value);
-            textBoxNoTlf.Text = Convert.ToString(dtPemesanan.Rows[e.RowIndex].Cells["noTelepon"].Value);
-            textBoxJumlah.Text = Convert.ToString(dtPemesanan.Rows[e.RowIndex].Cells["jumlahPemesanan"].Value);
-            textBoxIDLokasi.Text = Convert.ToString(dtPemesanan.Rows[e.RowIndex].Cells["Lokasi"].Value);
+            textBoxID.Text = Convert.ToString(dtPemesanan.Rows[e.RowIndex].Cells[0].Value);
+            textBoxNama.Text = Convert.ToString(dtPemesanan.Rows[e.RowIndex].Cells[1].Value);
+            textBoxNoTlf.Text = Convert.ToString(dtPemesanan.Rows[e.RowIndex].Cells[2].Value);
+            textBoxJumlah.Text = Convert.ToString(dtPemesanan.Rows[e.RowIndex].Cells[3].Value);
+            textBoxIDLokasi.Text = Convert.ToString(dtPemesanan.Rows[e.RowIndex].Cells[4].Value);
 
             textBoxJumlah.Enabled = false;
             textBoxIDLokasi.Enabled = false;

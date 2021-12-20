@@ -176,10 +176,13 @@ namespace ClientReservasi_029
             // 
             // dtPemesanan
             // 
-            this.dtPemesanan.AllowUserToOrderColumns = true;
+            this.dtPemesanan.AllowUserToAddRows = false;
+            this.dtPemesanan.AllowUserToDeleteRows = false;
+            this.dtPemesanan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtPemesanan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtPemesanan.Location = new System.Drawing.Point(12, 327);
             this.dtPemesanan.Name = "dtPemesanan";
+            this.dtPemesanan.ReadOnly = true;
             this.dtPemesanan.RowHeadersWidth = 51;
             this.dtPemesanan.RowTemplate.Height = 24;
             this.dtPemesanan.Size = new System.Drawing.Size(776, 202);
