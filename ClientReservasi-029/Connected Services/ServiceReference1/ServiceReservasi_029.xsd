@@ -37,12 +37,27 @@
   <xs:element name="ArrayOfPemesanan" nillable="true" type="tns:ArrayOfPemesanan" />
   <xs:complexType name="Pemesanan">
     <xs:sequence>
-      <xs:element minOccurs="0" name="IDReservasi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IDPemesanan" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="JumlahPemesanan" type="xs:int" />
       <xs:element minOccurs="0" name="Lokasi" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NamaCustomer" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="NoTelepon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NoTelpon" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Pemesanan" nillable="true" type="tns:Pemesanan" />
+  <xs:complexType name="ArrayOfDataRegister">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataRegister" nillable="true" type="tns:DataRegister" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataRegister" nillable="true" type="tns:ArrayOfDataRegister" />
+  <xs:complexType name="DataRegister">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="kategori" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataRegister" nillable="true" type="tns:DataRegister" />
 </xs:schema>
